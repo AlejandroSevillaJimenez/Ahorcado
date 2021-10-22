@@ -1,0 +1,55 @@
+﻿<Window x:Class="Ahorcado.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Ahorcado"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <Style TargetType="{x:Type TextBlock}">
+            <Setter Property="FontFamily" Value="Comic Sans MS"></Setter>
+        </Style>
+        <Style TargetType="{x:Type Image}">
+            <Setter Property="Width" Value="150"></Setter>
+        </Style>
+        <Style TargetType="{x:Type Button}" x:Key="BotonReinicio">
+            <Setter Property="Margin" Value="10"></Setter>
+        </Style>
+        <Style TargetType="{x:Type Button}" x:Key="BotonLetra">
+            <Setter Property="Margin" Value="5"></Setter>
+            <Setter Property="BorderThickness" Value="2"></Setter>
+            <Setter Property="Background" Value="White"></Setter>
+            <Setter Property="Height" Value="30"></Setter>
+            <Setter Property="Width" Value="30"></Setter>
+        </Style>
+        <Style TargetType="{x:Type Border}">
+            <Setter Property="BorderBrush" Value="Black"></Setter>
+            <Setter Property="BorderThickness" Value="3"></Setter>
+        </Style>
+    </Window.Resources>
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Top" Orientation="Vertical" Height="50">
+            <TextBlock Text="Ahorcado" HorizontalAlignment="Center" FontSize="30"/>
+        </StackPanel>
+        <StackPanel DockPanel.Dock="Left" Width="250" Orientation="Vertical">
+            <StackPanel>
+                <Image Source="./source/4.jpg"></Image>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="40">
+                <Button x:Name="NuevaPartidaButton" Content="Nueva Partida" Style="{StaticResource BotonReinicio}" Click="NuevaPartidaButton_Click"></Button>
+                <Button x:Name="RendirseButton" Content="Rendirse" Style="{StaticResource BotonReinicio}"></Button>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Margin="0,0,20,0">
+            <StackPanel>
+                <Border>
+                    <TextBlock x:Name="PalabraTextBlock" Text="" FontSize="60" Margin="10" TextAlignment="Center"/>
+                </Border>
+            </StackPanel>
+            <WrapPanel Orientation="Horizontal" Name="LetrasWrapPanel">
+                
+            </WrapPanel>
+        </StackPanel>
+    </DockPanel>
+</Window>
